@@ -1,8 +1,13 @@
-from datacollection import *
+from tkinter import *
+from tkinter import filedialog
 
-# Creates run button
-run_button = ttk.Button(text="Run", width=20, command=run)
-run_button.grid(row=6, column=0, padx=10, pady=10)
+def browse():
+    dir = filedialog.askopenfilename(initialdir="",title="Browse")
+    return dir
 
-# Executes Tkinter loop to display GUI
-root.mainloop()
+window = Tk()
+button = Button(text="Open File", command=browse)
+button.pack()
+
+
+window.mainloop()  
